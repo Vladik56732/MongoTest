@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: rgb(11, 119, 119);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                sans-serif;
+        }
+        form {
+            width: 500px;
+            height: 500px;
+            border-color: 1px solid black;
+            background-color: cadetblue;
+            border-radius: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 8px;
+            margin: 0 auto;
+        }
+        input {
+            margin: 10px;
+            background-color: rgb(115, 191, 194);
+            border: none;
+            border-radius: 12px;
+            padding: 10px;
+        }
+    </style>
+    <body>
+        <%- include('../particals/header',{title: 'Создание поста'})%>
+        <form method="post" enctype="multipart/form-data" action="">
+            <input
+                id="file"
+                type="file"
+                accept="image/png, image/jpeg"
+                required
+                name="picture"
+            />
+            <input
+                id="description"
+                type="text"
+                required
+                name="description"
+                placeholder="Описание"
+            />
+            <input type="submit" value="Создать пост" />
+        </form>
+    </body>
+</html>

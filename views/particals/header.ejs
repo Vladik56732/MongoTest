@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/public/styles/header.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+/>
+<header>
+    <div class="point"><i class="fa-solid fa-arrow-up"></i></div>
+    <h1><%= title %></h1>
+    <nav>
+        <a href="/register">Регистрация</a>
+        <a href="/auth">Авторизация</a>
+        <a href="/users">Пользователи</a>
+        <a href="/posts">Публикации</a>
+        <a href="/posts/create">Создать пост</a>
+    </nav>
+</header>
+<script>
+    const point = document.querySelector('.point')
+    const header = document.querySelector('header')
+    let headerIsOpen = false
+    point.addEventListener('click', () => {
+        if (headerIsOpen) {
+            header.style.marginTop = '-75px'
+            headerIsOpen = false
+            point.innerHTML = '<i class="fa-solid fa-arrow-up"></i>'
+        } else {
+            header.style.marginTop = '0px'
+            headerIsOpen = true
+            point.innerHTML = '<i class="fa-solid fa-arrow-down"></i>'
+        }
+    })
+</script>

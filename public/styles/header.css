@@ -1,0 +1,46 @@
+header {
+    width: 100%;
+    background-color: rgb(166, 242, 242);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: -75px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+header nav {
+    z-index: 1;
+}
+header h1 {
+    color: rgb(86, 140, 65);
+}
+header a {
+    text-decoration: none;
+
+    color: rgb(138, 197, 79);
+    margin-right: 90px;
+}
+header a:last-child {
+    margin-right: 0;
+}
+header a:hover {
+    color: rgb(49, 176, 27);
+}
+header .point {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(166, 242, 242);
+    left: 50%;
+    bottom: -25px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 5px;
+    color: rgb(86, 140, 65);
+}

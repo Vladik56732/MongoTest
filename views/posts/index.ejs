@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                    sans-serif;
+            }
+            body {
+                width: 100%;
+                background-color: rgb(11, 119, 119);
+            }
+            .post {
+                width: 500px;
+                background-color: cadetblue;
+                border: 1px solid rgb(113, 113, 113);
+                border-radius: 5%;
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .image {
+                height: 470px;
+                width: 470px;
+                border-radius: 20px;
+                margin-bottom: 30px;
+                background-size: contain;
+                background-position: center;
+                background-color: rgb(115, 191, 194);
+                background-repeat: no-repeat;
+            }
+            .posts {
+                color: rgb(72, 71, 72);
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('../particals/header',{title: 'Публикации'})%>
+        <div class="posts">
+            <% posts.forEach(post=>{%>
+            <div class="post">
+                <div
+                    class="image"
+                    style="
+                        background-image: url(/public/images/<%=post.picture%>);
+                    "
+                ></div>
+                <h2><%=post.fileName%></h2>
+                <h2><%=post.description%></h2>
+                <!-- <h2>ID создателя: <%=post.creatorId%></h2> -->
+                <h2>
+                    <%= new Date(Number(post.timestamp )).getDate()+"."+(new
+                    Date(Number(post.timestamp )).getMonth()+1)+"."+new
+                    Date(Number(post.timestamp )).getFullYear()%>
+                </h2>
+            </div>
+
+            <%})%>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: rgb(11, 119, 119);
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                    sans-serif;
+                width: 100%;
+            }
+            .users {
+                text-align: center;
+                font-size: 5rem;
+                color: rgb(72, 71, 72);
+            }
+            .users2 {
+                text-align: center;
+
+                color: rgb(72, 71, 72);
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('particals/header', {title:'Пользователи'})%>
+
+        <h1 class="users">Users</h1>
+        <% users.forEach(user=>{%>
+
+        <h2 class="users2"><%=user.login%></h2>
+
+        <%})%>
+    </body>
+</html>
